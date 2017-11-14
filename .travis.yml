@@ -1,0 +1,14 @@
+sudo: required
+services:
+- docker
+before_install:
+- docker info
+- make build
+script:
+- make test
+- make travis_push
+
+env:
+  global:
+    - DOCKER_USER=cwpearson
+    secure: D+YLm8Eti7hq9tEDnj3FtiVUpsUmA28wc4Fd0a/b2g93rwkC475o5Qp8DDJi9kZ9ogRnOj5BbutofjpojpdwbmpfzNP0SP8ZI/kEs/V8p9KCmpzpBYn8ieTerVB42kf/KeNZtwRcTsC5BtjR1FmouaHEGpUzGSr+Kw5o9CN6cJWpVLDqx0wXlg8aD51443OW+aHYzwjj3FA5z7M90knzp4ObAHb0mVXmIxMag31YAeqyHAwGC5bFhiDZC7uPcEShRsmIJ/AfOcr82LhajA+/6RivK0navkYvNEwvN9EIhQHOzZthUYZzF+hzK76Hrwfz+pqRiYK4iAkUM8fykXg1ZoOHtb+a236VTZmn49sBUVZl5v9yeKIhHa1EhYWiqdYvHsAS0vRaZycKuCp23x/8uKrQOPstiJ0H+RycyZdhoYX0Ilj+bcf9v8pKxdThLKaUr7J0VIO2TwrS3zDQDVtw+IWdjZ8hC9XUmvOzshWuvx4ON2txMIV6TSgvKOh2e7mNNRXJo+/L1WuHx5RGHT5XTU6tfxa2ZTfd/iHSYLFwZXDQZr3jvSpO841v2OCfpmWLrvnEB3jCVQSMH881dYFadBx9qQI3goo5ZhbI1DtWNGt7p3VJvqSzLGv+ZL8lGOWitmja3HNQeFA0RWMpASxlHJ5zwuFSVOK7z9159mqsqP0=
