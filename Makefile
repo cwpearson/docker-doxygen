@@ -13,5 +13,5 @@ test: build
 	docker run -u 1000:1000 --rm -it cwpearson/doxygen doxygen -version
 
 travis_push: build
-	@docker login -u $(DOCKER_USER) $(DOCKER_PASS)
+	@docker login -u $(DOCKER_USER) -p $(DOCKER_PASS)
 	@docker push cwpearson/doxygen:latest
